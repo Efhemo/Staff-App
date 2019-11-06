@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimen_16">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/dimen_120"
+                android:layout_height="@dimen/dimen_120"
+                android:layout_marginTop="@dimen/dimen_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                app:layout_constraintLeft_toLeftOf="@id/image"
+                app:layout_constraintRight_toRightOf="@id/image"
+                android:visibility="gone"
+                android:layout_width="@dimen/dimen_12"
+                android:layout_height="@dimen/dimen_12"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/camera_background"
+                android:layout_width="@dimen/dimen_40"
+                android:layout_height="@dimen/dimen_40"
+                android:layout_marginStart="@dimen/dimen_50"
+                android:layout_marginTop="@dimen/dimen_50"
+                android:background="@drawable/circle_button"
+                app:layout_constraintBottom_toBottomOf="@id/image"
+                app:layout_constraintRight_toRightOf="@id/image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/camera_background"
+                app:layout_constraintLeft_toLeftOf="@id/camera_background"
+                app:layout_constraintRight_toRightOf="@id/camera_background"
+                app:layout_constraintTop_toTopOf="@id/camera_background"
+                app:srcCompat="@drawable/ic_photo_camera_black_24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintLeft_toLeftOf="@id/image"
+                app:layout_constraintRight_toRightOf="@id/image"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/acct_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textStyle="italic"
+                app:layout_constraintLeft_toLeftOf="@id/user_name"
+                app:layout_constraintRight_toRightOf="@id/user_name"
+                app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textStyle="italic"
+                android:layout_marginTop="@dimen/dimen_2"
+                app:layout_constraintLeft_toLeftOf="@id/acct_name"
+                app:layout_constraintRight_toRightOf="@id/acct_name"
+                app:layout_constraintTop_toBottomOf="@id/acct_name" />
+
+            <LinearLayout
+                android:id="@+id/layout_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/email">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/update_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_16"
+                    android:layout_marginTop="@dimen/dimen_16"
+                    android:layout_marginRight="@dimen/dimen_16"
+                    android:background="@drawable/ash_outline_bg"
+                    android:drawableEnd="@drawable/ic_arrow_drop"
+                    android:padding="8dp"
+                    android:text="Update"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="1000"
+                    app:el_expanded="true"
+                    app:el_parallax="0.5"
+                    app:layout_constraintTop_toBottomOf="@id/image">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/wrap_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimen_16"
+                            android:layout_marginTop="@dimen/dimen_24"
+                            android:hint="Place of birth"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/address"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:inputType="textCapSentences"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/wrap_specialty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_12"
+                            android:layout_marginEnd="@dimen/dimen_12"
+                            android:hint="Specialty"
+                            app:layout_constraintLeft_toLeftOf="@id/wrap_address"
+                            app:layout_constraintRight_toLeftOf="@+id/wrap_dob"
+                            app:layout_constraintTop_toBottomOf="@id/wrap_address">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/specialty"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                                android:ellipsize="end"
+                                android:inputType="textCapSentences"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/wrap_dob"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Date of birth"
+                            app:layout_constraintBottom_toBottomOf="@id/wrap_specialty"
+                            app:layout_constraintLeft_toRightOf="@id/wrap_specialty"
+                            app:layout_constraintRight_toRightOf="@id/wrap_address"
+                            app:layout_constraintTop_toTopOf="@id/wrap_specialty">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/state"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:ellipsize="end"
+                                android:inputType="textCapSentences"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            android:padding="@dimen/dimen_4"
+                            android:id="@+id/view_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="@dimen/dimen_12"
+                            android:layout_marginBottom="@dimen/dimen_16"
+                            android:text="Update Profile"
+                            android:textSize="@dimen/text_size_16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="@id/wrap_specialty"
+                            app:layout_constraintTop_toBottomOf="@id/wrap_specialty" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/myStaffFragment">
+
+    <fragment
+        android:id="@+id/myStaffFragment"
+        android:name="com.efhem.mystaff.ui.home.MyStaffFragment"
+        android:label="My Staff"
+        tools:layout="@layout/fragment_my_staff" />
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.efhem.mystaff.ui.home.Notification"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/addStaff"
+        android:name="com.efhem.mystaff.ui.home.AddStaff"
+        android:label="Add Staff"
+        tools:layout="@layout/fragment_add_staff" />
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.efhem.mystaff.ui.home.ScheduleFragment"
+        android:label="Schedule Meeting"
+        tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.efhem.mystaff.ui.home.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

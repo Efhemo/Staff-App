@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_150"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_16">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/girl_rm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginStart="@dimen/dimen_24"
+            android:id="@+id/fullname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_2"
+            android:text="Dudung Sokmanti"
+            app:layout_constraintBottom_toTopOf="@id/specialty"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_2"
+            android:text="Mobile Developer"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toTopOf="@id/specialty"
+            app:layout_constraintLeft_toLeftOf="@id/fullname"
+            app:layout_constraintTop_toBottomOf="@id/fullname" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_location_on_black_24dp"
+            android:padding="@dimen/dimen_2"
+            android:text="Mobile Developer"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/greyBD"
+            app:layout_constraintBottom_toTopOf="@id/dob"
+            app:layout_constraintLeft_toLeftOf="@id/specialty"
+            app:layout_constraintTop_toBottomOf="@id/specialty" />
+
+        <TextView
+            android:id="@+id/dob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_2"
+            android:text="Monday 8 march 2018"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/greyBD"
+            app:layout_constraintLeft_toLeftOf="@id/location"
+            app:layout_constraintTop_toBottomOf="@id/location"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
