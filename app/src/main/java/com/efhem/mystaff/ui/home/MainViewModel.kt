@@ -33,11 +33,27 @@ class MainViewModel(app: Application) : ViewModel() {
         }
     }
 
-    suspend fun updateDb(fullname: String, pob: String, specialty: String, dob: String, email: String){
+    suspend fun updateDb(
+        fullname: String,
+        pob: String,
+        specialty: String,
+        dob: String,
+        email: String
+    ) = withContext(Dispatchers.IO) {
         val staff = database.daoProfile.getProfileByEmail(email)
         staff?.let {
 
-            database.daoProfile.insertProfile(Staff(fullname, email, specialty, it.password, dob, pob))
+            database.daoProfile.insertProfile(
+                Staff(
+                    fullname,
+                    email,
+                    specialty,
+                    it.password,
+                    dob,
+                    pob,
+                    imageUrk = it.imageUrk
+                )
+            )
         }
     }
 
